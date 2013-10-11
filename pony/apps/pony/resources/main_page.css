@@ -23,10 +23,10 @@ $theme.sc-main, #loading {
     background: transparent static_url('low_contrast_linen.png') repeat;
 }
 
-$theme.green {
-    background-color: #A0FF91;
+$theme.main {
+    background-color: #54C7FC;
 }
 
-$theme.orange {
-    background-color: #FFA84E;
+$theme.toolbox {
+    background-color: #34AADC;
 }

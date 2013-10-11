@@ -36,7 +36,7 @@ Pony.mainPage = SC.Page.design({
         })
     }),
     main: SC.LabelView.design({
-        classNames: ['green'],
+        classNames: ['main'],
         layout: {top:32, bottom:0, left:0, right:0},
         value: "main",
         transitionIn: SC.View.SLIDE_IN,
@@ -46,7 +46,7 @@ Pony.mainPage = SC.Page.design({
         transitionOutOptions: { direction: 'left', duration: Pony.transitionSpeed }
     }),
     toolbox: SC.LabelView.design({
-        classNames: ['orange'],
+        classNames: ['toolbox'],
         layout: {top:32, bottom:0, width:300, right:0},
         value: "toolbox",
         transitionIn: SC.View.SLIDE_IN,
