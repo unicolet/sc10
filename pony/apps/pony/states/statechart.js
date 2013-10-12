@@ -5,7 +5,9 @@ Pony.statechart = SC.Statechart.create({
     
     login: SC.State.extend({
         enterState: function() {
-            Pony.getPath('loginPage.mainPane').append();
+            this.invokeLater(function(){
+                Pony.getPath('loginPage.mainPane').append();
+            }, Pony.transitionSpeed*1000);
         },
         
         exitState: function() {
@@ -19,7 +21,9 @@ Pony.statechart = SC.Statechart.create({
     
     loggedIn: SC.State.extend({
         enterState: function() {
-            Pony.getPath('mainPage.mainPane').append();
+            this.invokeLater(function(){
+                Pony.getPath('mainPage.mainPane').append();
+            }, Pony.transitionSpeed*1000);
         },
         
         exitState: function() {

@@ -68,7 +68,8 @@ Pony.loginPage = SC.Page.design({
 
     form: SC.View.design({
         classNames: ['form'],
-        layout: {width: 300, height: 200, centerX: 50, centerY: 0},
+        // use $.width/height because centerX/Y stutters towards the end of the animation
+        layout: {width: 300, height: 200, left: $( window ).width()/2 - 150, top: $( window ).height()/2 - 100},
         childViews: "login pwd button".w(),
         
         transitionIn: SC.View.SLIDE_IN,
