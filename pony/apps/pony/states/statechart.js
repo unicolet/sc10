@@ -13,7 +13,6 @@ Pony.statechart = SC.Statechart.create({
         },
                 
         doLogin: function(view) {
-            console.log('doLogin');
             this.gotoState('loggedIn');
         }
     }),
