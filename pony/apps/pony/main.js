@@ -12,20 +12,8 @@
 // See comments for some pointers on what to do next.
 //
 Pony.main = function main() {
-
-  // Step 1: Instantiate Your Views
-  // The default code here will make the mainPane for your application visible
-  // on screen.  If you app gets any level of complexity, you will probably
-  // create multiple pages and panes.
-  Pony.getPath('mainPage.mainPane').append() ;
-
-  // Step 2. Set the content property on your primary controller.
-  // This will make your app come alive!
-  //
-  // ex.
-  // var content = Pony.store.find(Pony.Group);
-  // Pony.groupsController.set('content', content);
-
+    
+  Pony.statechart.initStatechart();
 };
 
 

@@ -8,12 +8,13 @@ Pony.transitionSpeed = 0.5;
 
 // This page describes the main user interface for your application.
 Pony.mainPage = SC.Page.design({
-
+    
   // The main pane is made visible on screen as soon as your app is loaded.
   // Add childViews to this pane for views to display immediately on page
   // load.
   mainPane: SC.MainPane.design({
     childViews: 'toolbar main toolbox'.w(),
+    defaultResponder: 'Pony.statechart',
 
     toolbar: SC.ToolbarView.design({
         layout: { left: 0, right: 0, height: 32, zIndex: 10, top: 0 },
@@ -27,17 +28,18 @@ Pony.mainPage = SC.Page.design({
         childViews: "button1 button2".w(),
         
         button1: SC.ButtonView.design({
-            layout: {centerY:0, width: 100, right: 25, height: 24},
-            title: "Button1"
+            layout: {centerY:0, width: 100, right: 150, height: 24},
+            title: "save"
         }),
         button2: SC.ButtonView.design({
-            layout: {centerY:0, width: 100, right: 150, height: 24},
-            title: "Button2"
+            layout: {centerY:0, width: 100, right: 25, height: 24},
+            title: "logout",
+            action: "doLogout"
         })
     }),
     main: SC.LabelView.design({
         classNames: ['main'],
-        layout: {top:32, bottom:0, left:0, right:0},
+        layout: {top:32, bottom:0, left:0, right:300},
         value: "main",
         transitionIn: SC.View.SLIDE_IN,
         transitionInOptions: { direction: 'right', duration: Pony.transitionSpeed },
@@ -56,5 +58,38 @@ Pony.mainPage = SC.Page.design({
         transitionOutOptions: { direction: 'right', duration: Pony.transitionSpeed }
     })
   })
+});
 
+Pony.loginPage = SC.Page.design({
+
+  mainPane: SC.MainPane.design({
+    childViews: 'form'.w(),
+    defaultResponder: 'Pony.statechart',
+
+    form: SC.View.design({
+        classNames: ['form'],
+        layout: {width: 300, height: 200, centerX: 50, centerY: 0},
+        childViews: "login pwd button".w(),
+        
+        transitionIn: SC.View.SLIDE_IN,
+        transitionInOptions: { direction: 'up', duration: Pony.transitionSpeed },
+
+        transitionOut: SC.View.SLIDE_OUT,
+        transitionOutOptions: { direction: 'down', duration: Pony.transitionSpeed },
+        
+        login: SC.TextFieldView.design({
+            layout: { width: 250, height: 24, centerX:0, top: 30},
+            hint: "username"
+        }),
+        pwd: SC.TextFieldView.design({
+            layout: { width: 250, height: 24, centerX:0, top: 70},
+            hint: "password"
+        }),
+        button: SC.ButtonView.design({
+            layout: { width: 100, height: 24, centerX:0, top: 110},
+            action: "doLogin",
+            title: "Login"
+        })
+    })
+  })
 });

@@ -30,3 +30,8 @@ $theme.main {
 $theme.toolbox {
     background-color: #34AADC;
 }
+
+$theme.form {
+    background-color: #FF9500;
+}
+
